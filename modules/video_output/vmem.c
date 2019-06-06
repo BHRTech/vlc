@@ -84,7 +84,7 @@ vlc_module_end()
 typedef struct
 {
     void *id;
-} picture_sys_t;
+} picture_sys_d3d11_t;
 
 /* NOTE: the callback prototypes must match those of LibVLC */
 struct vout_display_sys_t {
