@@ -692,7 +692,7 @@ static void MainLoop( input_thread_t *p_input, bool b_interactive )
 
                 if( b_can_demux )
                     i_wakeup = es_out_GetWakeup( input_priv(p_input)->p_es_out );
-                else if(!strcmp(p_demux->psz_access, "rtp"))
+                else if(p_demux->psz_url != NULL && !strncmp(p_demux->psz_url, "rtp:", 4))
                     i_wakeup = mdate() + INPUT_IDLE_SLEEP;
                 if( b_force_update )
                     i_intf_update = 0;
